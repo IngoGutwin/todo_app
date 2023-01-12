@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="md:container mx-auto">
     <ToDos />
   </main>
 </template>
@@ -8,4 +8,6 @@
 import ToDos from "./components/ToDos.vue";
 </script>
 
-<style scoped></style>
+<style scoped>
+  
+</style>

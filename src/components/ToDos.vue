@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <CheckButton />
+  <div class="max-w-xl">
+    <h1 class="text-5xl font-bold uppercase">todo</h1>
   </div>
 </template>
 
-<script setup>
-import CheckButton from "./icons/CheckButton.vue";
-</script>
+<script setup></script>
 
-<style lang="scss" scoped></style>
+<style></style>
