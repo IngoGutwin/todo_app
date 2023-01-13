@@ -2,8 +2,29 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js}"],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "bright-blue": "#3a7bfd",
+        light_theme: {
+          "very-light-gray": "#fafafa",
+          "very-light-grayish-blue": "#e4e5f1",
+          "light-grayish-blue": "#d2d3db",
+          "dark-grayish-blue": "#9394a5",
+          "very-dark-grayish-blue": "#484b6a",
+        },
+        dark_theme: {
+          "very-dark-blue": "#161722",
+          "very-dark-desaturated-blue": "#25273c",
+          "light-grayish-blue": "#cacde8",
+          "light-grayish-blue-hover": "#e4e5f1",
+          "dark-grayish-blue": "#777a92",
+          "very-dark-grayish-blue": "#4d5066",
+          "very-dark-grayish-blue-hover": "#393a4c",
+        },
+      },
+    },
   },
   plugins: [],
 };
