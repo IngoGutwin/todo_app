@@ -1,14 +1,24 @@
 <template>
-  <main>
-    <AppWrapper />
-    <ToDoItem />
+  <main :class="currentTheme">
+    <AppWrapper @change-theme="changeTheme" :current-theme="currentTheme" />
   </main>
 </template>
 
 <script>
 export default {
-  props: {
-    theme_mode: String,
+  data() {
+    return {
+      currentTheme: "light",
+    };
+  },
+  methods: {
+    changeTheme() {
+      if (this.currentTheme === "light") {
+        this.currentTheme = "dark";
+      } else {
+        this.currentTheme = "light";
+      }
+    },
   },
 };
 </script>
