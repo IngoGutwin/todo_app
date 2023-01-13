@@ -1,13 +1,15 @@
 <template>
-  <main class="md:container mx-auto">
-    <ToDos />
+  <main class="dark">
+    <div
+      class="bg-light_theme-very-light-gray dark:bg-dark_theme-very-dark-blue h-screen bg-no-repeat bg-bg-desktop-light bg-top w-full"
+    >
+      <ToDoItem />
+    </div>
   </main>
 </template>
 
 <script setup>
-import ToDos from "./components/ToDos.vue";
+import ToDoItem from "./components/ToDoItem.vue";
 </script>
 
-<style scoped>
-  
-</style>
+<style scoped></style>
