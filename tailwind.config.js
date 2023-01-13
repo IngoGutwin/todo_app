@@ -15,7 +15,7 @@ module.exports = {
           "very-dark-grayish-blue": "#484b6a",
         },
         dark_theme: {
-          "very-dark-blue": "#161722",
+          "very-dark-blue": "#171823",
           "very-dark-desaturated-blue": "#25273c",
           "light-grayish-blue": "#cacde8",
           "light-grayish-blue-hover": "#e4e5f1",
@@ -23,6 +23,12 @@ module.exports = {
           "very-dark-grayish-blue": "#4d5066",
           "very-dark-grayish-blue-hover": "#393a4c",
         },
+      },
+      backgroundImage: {
+        "bg-desktop-dark": "url('./src/assets/images/bg-desktop-dark.jpg')",
+        "bg-desktop-light": "url('./src/assets/images/bg-desktop-light.jpg')",
+        "bg-mobile-dark": "url('./src/assets/images/bg-mobile-dark.jpg')",
+        "bg-mobile-light": "url('./src/assets/images/bg-desktop-light.jpg')",
       },
     },
   },
