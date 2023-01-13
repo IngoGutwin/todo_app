@@ -8,8 +8,6 @@
   </main>
 </template>
 
-<script setup>
-import ToDoItem from "./components/ToDoItem.vue";
-</script>
+<script setup></script>
 
 <style scoped></style>
