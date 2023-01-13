@@ -1,13 +1,16 @@
 <template>
-  <main class="md:container mx-auto">
-    <ToDos />
+  <main>
+    <AppWrapper />
+    <ToDoItem />
   </main>
 </template>
 
-<script setup>
-import ToDos from "./components/ToDos.vue";
+<script>
+export default {
+  props: {
+    theme_mode: String,
+  },
+};
 </script>
 
-<style scoped>
-  
-</style>
+<style scoped></style>
