@@ -6,7 +6,7 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 .content {
   @apply bg-light_theme-very-light-gray dark:bg-dark_theme-very-dark-blue h-screen bg-no-repeat bg-bg-desktop-light dark:bg-bg-desktop-dark bg-top w-full;
 }
