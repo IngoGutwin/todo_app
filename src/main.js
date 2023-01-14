@@ -2,4 +2,16 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./assets/main.css";
 
-createApp(App).mount("#app");
+import AppWrapper from "./components/AppWrapper.vue";
+import ToDoItem from "./components/ToDoItem.vue";
+import IconMoon from "./components/icons/IconMoon.vue";
+import IconSun from "./components/icons/IconSun.vue";
+
+const app = createApp(App);
+
+app.component("AppWrapper", AppWrapper);
+app.component("ToDoItem", ToDoItem);
+app.component("IconMoon", IconMoon);
+app.component("IconSun", IconSun);
+
+app.mount("#app");

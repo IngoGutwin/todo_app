@@ -1,13 +1,26 @@
 <template>
-  <main class="dark">
-    <div
-      class="bg-light_theme-very-light-gray dark:bg-dark_theme-very-dark-blue h-screen bg-no-repeat bg-bg-desktop-light bg-top w-full"
-    >
-      <ToDoItem />
-    </div>
+  <main :class="currentTheme">
+    <AppWrapper @change-theme="changeTheme" :current-theme="currentTheme" />
   </main>
 </template>
 
-<script setup></script>
+<script>
+export default {
+  data() {
+    return {
+      currentTheme: "light",
+    };
+  },
+  methods: {
+    changeTheme() {
+      if (this.currentTheme === "light") {
+        this.currentTheme = "dark";
+      } else {
+        this.currentTheme = "light";
+      }
+    },
+  },
+};
+</script>
 
 <style scoped></style>
