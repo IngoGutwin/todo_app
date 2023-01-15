@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./assets/main.css";
+import "./index.css";
 
 import AppWrapper from "./components/AppWrapper.vue";
 import ToDoItem from "./components/ToDoItem.vue";
