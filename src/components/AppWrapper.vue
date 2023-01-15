@@ -12,15 +12,24 @@
       </div>
       <!-- end container  -->
       <!-- start container todo's input -->
-      <form class="mx-auto max-w-xl mt-10">
-        <button>Go</button>
+      <form
+        ref="userInput"
+        class="mx-auto max-w-xl mt-10 relative"
+        @submit.prevent="saveItem"
+      >
         <input
-          type="search"
-          v-model="newTodo"
-          @keydown.enter="saveItem(newTodo)"
+          type="text"
+          v-model="newItem"
           placeholder="Create a new todo..."
-          class="w-full h-16 rounded-md px-6"
+          class="input-field"
         />
+        <button>
+          <CrossIcon
+            v-if="deleteButton === true"
+            class="absolute top-0 right-5 mt-5"
+            @click="clearForm"
+          />
+        </button>
       </form>
     </div>
     <!-- end container todo's input -->
@@ -29,25 +38,36 @@
 </template>
 
 <script>
-import CheckButton from "./icons/CheckButton.vue";
-
 export default {
   props: {
     currentTheme: { type: String, required: true },
   },
   data() {
     return {
-      newTodo: "",
+      newItem: "",
       todoList: [],
+      deleteButton: false,
     };
+  },
+  watch: {
+    newItem: function (value) {
+      if (value.length > 0) {
+        this.deleteButton = true;
+      } else if (value.length === 0) {
+        this.deleteButton = false;
+      }
+    },
   },
   methods: {
     saveItem() {
-      this.todoList.append(this.newTodo);
-      console.log(this.todoList);
+      this.todoList.push(this.newItem);
+      this.newItem = "";
+      this.clearForm();
+    },
+    clearForm() {
+      this.$refs.userInput.reset();
     },
   },
-  components: { CheckButton },
 };
 </script>
 
@@ -61,5 +81,12 @@ export default {
 }
 .heading {
   @apply max-w-xl mx-auto flex justify-between items-center pt-20;
+}
+
+.input-field {
+  @apply w-full h-16 rounded-md px-6 bg-light_theme-very-light-gray dark:bg-dark_theme-very-dark-blue text-light_theme-dark-grayish-blue dark:text-dark_theme-dark-grayish-blue;
+}
+.input-field:focus {
+  outline: none;
 }
 </style>
