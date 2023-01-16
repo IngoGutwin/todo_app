@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line no-undef
 module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js}"],
+  content: ["./index.html", "./src/**/*.{ts,jsx,tsx,vue,js}"],
   darkMode: "class",
   theme: {
     extend: {
@@ -25,10 +24,10 @@ module.exports = {
         },
       },
       backgroundImage: {
-        "bg-desktop-dark": "url('./src/assets/images/bg-desktop-dark.jpg')",
-        "bg-desktop-light": "url('./src/assets/images/bg-desktop-light.jpg')",
-        "bg-mobile-dark": "url('./src/assets/images/bg-mobile-dark.jpg')",
-        "bg-mobile-light": "url('./src/assets/images/bg-desktop-light.jpg')",
+        "bg-desktop-dark": "url('@/assets/images/bg-desktop-dark.jpg')",
+        "bg-desktop-light": "url('@/assets/images/bg-desktop-light.jpg')",
+        "bg-mobile-dark": "url('@/assets/images/bg-mobile-dark.jpg')",
+        "bg-mobile-light": "url('@/assets/images/bg-desktop-light.jpg')",
       },
     },
   },
