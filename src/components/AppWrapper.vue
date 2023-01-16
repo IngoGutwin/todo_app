@@ -4,7 +4,7 @@
     <div class="content container">
       <!-- start container with heading and theme toggle -->
       <div class="heading">
-        <h1 class="text-5xl font-bold uppercase text-white pt-3">todo</h1>
+        <h1 class="text-5xl font-bold uppercase text-white pt-3">todo - app</h1>
         <button @click="$emit('changeTheme')" class="w-6 h-6 text-white">
           <IconSun v-if="currentTheme === 'dark'" />
           <IconMoon v-else-if="currentTheme === 'light'" />
