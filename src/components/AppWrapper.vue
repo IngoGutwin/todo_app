@@ -1,6 +1,7 @@
 <template>
   <!-- start main container -->
   <div class="background">
+    <!-- start app container -->
     <div class="content container">
       <!-- start container with heading and theme toggle -->
       <div class="heading">
@@ -31,8 +32,9 @@
           />
         </button>
       </form>
+      <!-- end container todo's input -->
     </div>
-    <!-- end container todo's input -->
+    <!-- end container todo's app  -->
   </div>
   <!-- end main container -->
 </template>
@@ -62,6 +64,7 @@ export default {
     saveItem() {
       this.todoList.push(this.newItem);
       this.newItem = "";
+      console.log(this.todoList);
       this.clearForm();
     },
     clearForm() {
