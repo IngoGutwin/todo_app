@@ -22,7 +22,7 @@
         <CheckIcon />
       </template>
 
-      {{ todoList }}
+      {{ item }}
 
       <template #cross>
         <CrossIcon />
