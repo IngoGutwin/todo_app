@@ -1,6 +1,15 @@
 <template>
   <main :class="currentTheme">
-    <AppWrapper @change-theme="changeTheme" :current-theme="currentTheme" />
+    <div class="background">
+      <div class="content container">
+        <HeaderToggle
+          @change-theme="changeTheme"
+          :current-theme="currentTheme"
+        />
+
+        <UserInput />
+      </div>
+    </div>
   </main>
 </template>
 
@@ -36,4 +45,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.content {
+  @apply mx-auto h-screen;
+}
+.background {
+  @apply bg-light_theme-very-light-gray dark:bg-dark_theme-very-dark-blue bg-no-repeat bg-bg-desktop-light dark:bg-bg-desktop-dark bg-top mx-auto;
+}
+</style>
