@@ -2,16 +2,12 @@
     <div>
         <UserInput @save-item="saveItem" />
 
-        <ToDoItem
-            v-for="item in todoList"
-            :key="item"
-            class="todo-field first:rounded-t-md"
-        >
+        <ToDoItem v-for="item in todoList" :key="item">
             <template #check>
                 <CheckIcon />
             </template>
 
-            {{ todoList }}
+            {{ item.name }}
 
             <template #cross>
                 <CrossIcon />

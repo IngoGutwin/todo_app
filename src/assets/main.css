@@ -12,6 +12,4 @@
 
 body {
     font-family: "Josefin Sans";
-    font-size: 18px;
-    @apply text-light_theme-dark-grayish-blue dark:text-dark_theme-light-grayish-blue;
 }
