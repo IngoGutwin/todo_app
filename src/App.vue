@@ -1,7 +1,11 @@
 <template>
     <main :class="currentTheme">
-        <div class="background">
-            <div class="content container">
+        <div
+            class="background bg-no-repeat bg-top mx-auto xs:text-xs sm:text-lg"
+        >
+            <div
+                class="content container h-screen mx-auto xs:max-w-xs md:max-w-xl"
+            >
                 <HeaderToggle
                     @change-theme="changeTheme"
                     :current-theme="currentTheme"
@@ -46,10 +50,18 @@ export default {
 </script>
 
 <style scoped>
-.content {
-    @apply mx-auto h-screen;
-}
 .background {
-    @apply bg-light_theme-very-light-gray dark:bg-dark_theme-very-dark-blue bg-no-repeat bg-bg-desktop-light dark:bg-bg-desktop-dark bg-top mx-auto;
+    @apply bg-light_theme-gray dark:bg-dark_theme-dark-blue text-light_theme-grayish-blue-300 dark:text-dark_theme-grayish-blue;
+}
+
+@screen xs {
+    .background {
+        @apply bg-mobile-light dark:bg-mobile-dark;
+    }
+}
+@screen sm {
+    .background {
+        @apply bg-desktop-light dark:bg-desktop-dark;
+    }
 }
 </style>

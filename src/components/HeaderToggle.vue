@@ -1,8 +1,10 @@
 <template>
     <div class="heading">
-        <h1 class="text-5xl font-bold uppercase text-white pt-3">todo</h1>
+        <h1 class="xs:text-xl sm:text-5xl font-bold uppercase text-white">
+            todo
+        </h1>
 
-        <button @click="$emit('changeTheme')" class="w-6 h-6 text-white">
+        <button @click="$emit('changeTheme')" class="text-white">
             <IconSun v-if="currentTheme === 'dark'" />
 
             <IconMoon v-else-if="currentTheme === 'light'" />
@@ -20,6 +22,6 @@ export default {
 
 <style scoped>
 .heading {
-    @apply max-w-xl mx-auto flex justify-between items-center pt-20;
+    @apply mx-auto flex justify-between items-center xs:pt-12 sm:pt-20;
 }
 </style>
