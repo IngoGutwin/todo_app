@@ -2,17 +2,7 @@
     <div>
         <UserInput @save-item="saveItem" />
 
-        <ToDoItem v-for="item in todoList" :key="item">
-            <template #check>
-                <CheckIcon />
-            </template>
-
-            {{ item.name }}
-
-            <template #cross>
-                <CrossIcon />
-            </template>
-        </ToDoItem>
+        <ToDoItem v-for="item in todoList" :key="item" :item="item" />
     </div>
 </template>
 
@@ -20,13 +10,16 @@
 export default {
     data() {
         return {
-            todoList: [],
+            todoList: [
+                { done: false, name: "todo1" },
+                { done: false, name: "todo2" },
+                { done: true, name: "todo3" },
+            ],
         };
     },
     methods: {
         saveItem(item) {
-            let newItem = { done: false, name: item };
-            this.todoList.push(newItem);
+            this.todoList.push({ done: false, name: item });
         },
     },
 };
