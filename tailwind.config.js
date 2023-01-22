@@ -4,6 +4,7 @@ module.exports = {
         "./index.html",
         "./src/**/*.{vue,js}",
         "./components/**/*.{vue,js}",
+        "./components/icons/**/*.{vue,js}",
     ],
     darkMode: "class",
     theme: {
