@@ -1,21 +1,24 @@
 <template>
-    <div :class="classes" class="">
-        <button>
-            <slot name="check"></slot>
-        </button>
+    <div
+        :class="classes"
+        class="bg-white dark:bg-dark_theme-dark-blue-desaturated px-4 border-light_theme-grayish-blue-100 dark:border-dark_theme-grayish-blue-hover-200"
+    >
+        <CheckIcon :current-theme="currentTheme" />
 
-        <div class="w-full px-2">
-            <slot></slot>
-        </div>
+        <p class="w-full px-2">{{ item.name }}</p>
 
         <button>
-            <slot name="cross"></slot>
+            <CrossIcon />
         </button>
     </div>
 </template>
 
 <script>
 export default {
+    props: {
+        item: { type: Object, required: true },
+        currentTheme: { type: String, required: true },
+    },
     data() {
         return {
             classes:
