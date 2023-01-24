@@ -1,8 +1,8 @@
 <template>
-    <button @click="checkTodo">
+    <button>
         <svg
             class="w-6 h-6"
-            :class="classes"
+            :class="classesSvg"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -10,15 +10,17 @@
             <circle
                 cx="12"
                 cy="12"
-                :r="radius"
-                :fill="circleFill"
-                :stroke="circleBorder"
+                :r="circleRadius"
+                :fill="fillCircle"
+                :stroke="strokeCircle"
+                :class="classesCircle"
             />
 
             <path
                 d="M8 12.3041L10.6959 15L16.6959 9"
-                :stroke="strockeChop"
+                stroke="#FFFFFF"
                 stroke-width="2"
+                :class="classesChop"
             />
 
             <defs>
@@ -43,22 +45,51 @@
 export default {
     props: {
         currentTheme: { type: String, required: true },
+        markedToDo: { type: Boolean, required: true },
     },
     data() {
         return {
-            isactive: false,
-            radius: 11.5,
-            strockeChop: "#FFFFFF",
-            circleBorder: "#e4e5f1",
-            circleFill: "",
-            classes: "icon-not-active",
+            circleRadius: 11.5,
+            fillCircle: "#FFFFFF",
+            strokeCircle: "#e4e5f1",
+            classesSvg: "icon-not-active",
+            classesCircle:
+                "fill-white dark:fill-dark_theme-dark-blue-desaturated",
+            classesChop:
+                "stroke-white dark:stroke-dark_theme-dark-blue-desaturated",
         };
     },
-    watch: {},
-    created() {
-        console.log(tailwind.theme);
+    watch: {
+        markedToDo: function (todoItem) {
+            if (todoItem) {
+                this.markToDo(todoItem);
+            } else if (!todoItem) {
+                this.markToDo(todoItem);
+            }
+        },
     },
-    methods: {},
+    created() {},
+    methods: {
+        markToDo(condition) {
+            if (condition === true) {
+                this.circleRadius = 12;
+                this.fillCircle = "url(#paint0_linear_0_595)";
+                this.strokeCircle = 0;
+                this.classesSvg = "";
+                this.classesCircle = "";
+                this.classesChop = "";
+            } else if (condition === false) {
+                this.circleRadius = 11.5;
+                this.fillCircle = "#FFFFFF";
+                this.strokeCircle = "#e4e5f1";
+                this.classesSvg = "icon-not-active";
+                this.classesCircle =
+                    "fill-white dark:fill-dark_theme-dark-blue-desaturated";
+                this.classesChop =
+                    "stroke-white dark:stroke-dark_theme-dark-blue-desaturated";
+            }
+        },
+    },
 };
 </script>
 

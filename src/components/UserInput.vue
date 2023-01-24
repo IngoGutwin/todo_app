@@ -12,7 +12,7 @@
         <button>
             <CrossIcon
                 v-if="deleteButton === true"
-                class="absolute top-0 right-5 xs:mb-5 sm:mt-5"
+                class="absolute xs:top-4 sm:top-0 right-5 xs:mb-5 sm:mt-5"
                 @click.prevent="currentItem = ''"
             />
         </button>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    emits: ["saveItem"],
+    emits: ["passItem"],
     data() {
         return {
             classes: "empty-field",
@@ -42,7 +42,7 @@ export default {
     },
     methods: {
         passItem() {
-            this.$emit("saveItem", this.currentItem);
+            this.$emit("passItem", this.currentItem);
             this.currentItem = "";
         },
     },
