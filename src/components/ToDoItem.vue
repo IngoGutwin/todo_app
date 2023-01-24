@@ -1,7 +1,7 @@
 <template>
     <div
         :class="classesItem"
-        class="group bg-white dark:bg-dark_theme-dark-blue-desaturated px-4 border-light_theme-grayish-blue-100 dark:border-dark_theme-grayish-blue-hover-200"
+        class="group p-4 bg-white dark:bg-dark_theme-dark-blue-desaturated px-4 border-light_theme-grayish-blue-100 dark:border-dark_theme-grayish-blue-hover-200"
     >
         <CheckIcon
             :current-theme="currentTheme"
@@ -9,13 +9,13 @@
             @click="checkToDo"
         />
 
-        <p class="w-full px-2" :class="{ 'checked-todo': item.done }">
+        <p class="w-full px-4 break-all" :class="{ 'checked-todo': item.done }">
             {{ item.name }}
         </p>
 
         <CrossIcon
             @click="deleteToDo"
-            class="hidden group-hover:enabled:block"
+            class="lg:invisible group-hover:enabled:visible"
         />
     </div>
 </template>
@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             classesItem:
-                "todo-item flex justify-between self-center items-center border-b-2 xs:h-12 sm:h-16",
+                "todo-item flex justify-between self-center items-center border-b-2",
         };
     },
     methods: {

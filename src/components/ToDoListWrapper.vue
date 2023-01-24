@@ -11,6 +11,8 @@
             @delete-to-do="deleteToDo"
         />
     </div>
+
+    <FilterBar :items-left="todoList.length" />
 </template>
 
 <script>
@@ -21,9 +23,9 @@ export default {
     data() {
         return {
             todoList: [],
+            itemsLeft: 0,
         };
     },
-    created() {},
     methods: {
         passItem(item) {
             this.todoList.push({
@@ -60,5 +62,3 @@ export default {
     },
 };
 </script>
-
-<style scoped></style>
