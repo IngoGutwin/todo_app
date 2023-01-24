@@ -4,6 +4,7 @@ module.exports = {
         "./index.html",
         "./src/**/*.{vue,js}",
         "./components/**/*.{vue,js}",
+        "./components/icons/**/*.{vue,js}",
     ],
     darkMode: "class",
     theme: {
@@ -28,7 +29,7 @@ module.exports = {
                     "grayish-blue-hover": "#e4e5f1",
                     "grayish-blue-100": "#777a92",
                     "grayish-blue-200": "#4d5066",
-                    "grayish-blue-hover-200": "#393a4c",
+                    "grayish-blue-hover-200": "#5B5E7E",
                 },
             },
             backgroundImage: {

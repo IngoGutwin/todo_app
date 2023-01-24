@@ -11,7 +11,7 @@
                     :current-theme="currentTheme"
                 />
 
-                <ToDoListWrapper />
+                <ToDoListWrapper :current-theme="currentTheme" />
             </div>
         </div>
     </main>

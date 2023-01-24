@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./assets/main.css";
+import "./tailwind.css";
 
 import ToDoItem from "./components/ToDoItem.vue";
 import IconMoon from "./components/icons/IconMoon.vue";

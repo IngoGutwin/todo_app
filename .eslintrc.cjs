@@ -3,22 +3,22 @@
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-  },
-  extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/eslint-config-prettier",
-  ],
-  parserOptions: {
-    ecmaVersion: "latest",
-  },
-  rules: {
-    "vue/padding-line-between-tags": [
-      "error",
-      [{ blankLine: "always", prev: "*", next: "*" }],
+    root: true,
+    env: {
+        node: true,
+    },
+    extends: [
+        "plugin:vue/vue3-essential",
+        "eslint:recommended",
+        "@vue/eslint-config-prettier",
     ],
-  },
+    parserOptions: {
+        ecmaVersion: "latest",
+    },
+    rules: {
+        "vue/padding-line-between-tags": [
+            "error",
+            [{ blankLine: "always", prev: "*", next: "*" }],
+        ],
+    },
 };
