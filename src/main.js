@@ -10,6 +10,7 @@ import CheckIcon from "./components/icons/CheckIcon.vue";
 import ToDoListWrapper from "./components/ToDoListWrapper.vue";
 import UserInput from "./components/UserInput.vue";
 import HeaderToggle from "./components/HeaderToggle.vue";
+import FilterBar from "./components/FilterBar.vue";
 
 const app = createApp(App);
 
@@ -21,5 +22,6 @@ app.component("CheckIcon", CheckIcon);
 app.component("ToDoListWrapper", ToDoListWrapper);
 app.component("UserInput", UserInput);
 app.component("HeaderToggle", HeaderToggle);
+app.component("FilterBar", FilterBar);
 
 app.mount("#app");

@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "yarn build && npx tailwindcss -o ./src/tailwind.css && gh-pages -d dist",
+    "deploy": "yarn build && npx tailwindcss -o ./src/assets/tailwind.css && gh-pages -d dist",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
