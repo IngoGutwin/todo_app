@@ -69,19 +69,13 @@ export default {
             //console.log(`updateItemsLeft ${this.filterBar.itemsLeft}`);
         },
         currentFilter(option) {
-            if (option === "All") {
-                this.outputList = [...this.dataBase];
-                this.filterBar.filterOption = option;
-                return;
-            } else if (option === "clearCompleted") {
+            if (option === "clearCompleted") {
                 this.dataBase = [...this.sortTheList("Active")];
                 this.outputList = [...this.dataBase];
                 this.currentFilter(this.filterBar.filterOption);
-                return;
             } else {
                 this.filterBar.filterOption = option;
                 this.outputList = [...this.sortTheList(option)];
-                return;
             }
         },
         sortTheList(filter) {
@@ -94,6 +88,8 @@ export default {
                     if (item.done === true) {
                         return item;
                     }
+                } else if (filter === "All") {
+                    return item;
                 }
             });
             return sortedList;

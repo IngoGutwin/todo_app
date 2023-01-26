@@ -10,13 +10,6 @@
   src: local("Josefin Sans"), url("src/assets/font/JosefinSans-Regular.ttf");
 }
 
-@font-face {
-  font-family: "Josefin Sans";
-  font-weight: 300;
-  font-style: medium;
-  src: local("Josefin Sans"), url("src/assets/font/JosefinSans-Medium.ttf");
-}
-
 body {
   font-family: "Josefin Sans";
 } 

@@ -4,8 +4,8 @@
     >
         <CheckIcon
             :current-theme="currentTheme"
-            :marked-to-do="item.done"
-            @click.prevent="checkToDo"
+            :item-done="item.done"
+            @click="checkToDo"
         />
 
         <p class="w-full px-4 break-all" :class="{ 'checked-todo': item.done }">

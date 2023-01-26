@@ -45,30 +45,31 @@
 export default {
     props: {
         currentTheme: { type: String, required: true },
-        markedToDo: { type: Boolean, required: true },
+        itemDone: { type: Boolean, required: true },
     },
     data() {
         return {
-            circleRadius: 11.5,
-            fillCircle: "#FFFFFF",
-            strokeCircle: "#e4e5f1",
-            classesSvg: "icon-not-active",
-            classesCircle:
-                "fill-white dark:fill-dark_theme-dark-blue-desaturated",
-            classesChop:
-                "stroke-white dark:stroke-dark_theme-dark-blue-desaturated",
+            classesSvg: "",
+            circleRadius: 0,
+            fillCircle: "",
+            strokeCircle: "",
+            classesCircle: "",
+            classesChop: "",
         };
     },
-    watch: {
-        markedToDo: function (todoItem) {
-            if (todoItem) {
-                this.markToDo(todoItem);
-            } else if (!todoItem) {
-                this.markToDo(todoItem);
-            }
-        },
+    mounted() {
+        this.circleRadius = 11.5;
+        this.classesSvg = "icon-not-active";
+        this.fillCircle = "#FFFFFF";
+        this.strokeCircle = "#e4e5f1";
+        this.classesCircle =
+            "fill-white dark:fill-dark_theme-dark-blue-desaturated";
+        this.classesChop =
+            "stroke-white dark:stroke-dark_theme-dark-blue-desaturated";
     },
-    created() {},
+    beforeUpdate: function () {
+        this.markToDo(this.itemDone);
+    },
     methods: {
         markToDo(condition) {
             if (condition === true) {
@@ -81,8 +82,8 @@ export default {
             } else if (condition === false) {
                 this.circleRadius = 11.5;
                 this.fillCircle = "#FFFFFF";
-                this.strokeCircle = "#e4e5f1";
                 this.classesSvg = "icon-not-active";
+                this.strokeCircle = "#e4e5f1";
                 this.classesCircle =
                     "fill-white dark:fill-dark_theme-dark-blue-desaturated";
                 this.classesChop =
