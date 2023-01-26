@@ -10,6 +10,10 @@
             <IconMoon v-else-if="currentTheme === 'light'" />
         </button>
     </div>
+
+    <a href="https://github.com/IngoGutwin/todo_app" class="text-black"
+        >Link to reporitory</a
+    >
 </template>
 
 <script>
