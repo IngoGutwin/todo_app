@@ -1,13 +1,19 @@
 <template>
     <div class="mt-10 mx-auto relative">
-        <input
-            type="text"
-            v-model="currentItem"
-            placeholder="Create a new todo..."
-            class="input-field bg-white dark:bg-dark_theme-dark-blue-desaturated"
-            :class="classes"
-            @keyup.enter="passItem"
-        />
+        <div
+            class="bg-white dark:bg-dark_theme-dark-blue-desaturated rounded-md"
+        >
+            <div class="w-10/12 ml-10">
+                <input
+                    type="text"
+                    v-model="currentItem"
+                    placeholder="Create a new todo..."
+                    class="input-field bg-white dark:bg-dark_theme-dark-blue-desaturated"
+                    :class="classes"
+                    @keyup.enter="passItem"
+                />
+            </div>
+        </div>
 
         <button>
             <CrossIcon
@@ -21,7 +27,7 @@
 
 <script>
 export default {
-    emits: ["passItem"],
+    emits: ["passItem", "pass-item"],
     data() {
         return {
             classes: "empty-field",
@@ -52,7 +58,7 @@ export default {
 <style scoped>
 .input-field:focus,
 .input-field {
-    @apply w-full xs:h-12 sm:h-16 mb-6 rounded-md px-4;
+    @apply w-full xs:h-12 sm:h-16 rounded-md px-4;
     outline: none;
 }
 .empty-field {
