@@ -27,7 +27,7 @@
 
 <script>
 export default {
-    emits: ["passItem"],
+    emits: ["passItem", "pass-item"],
     data() {
         return {
             classes: "empty-field",
