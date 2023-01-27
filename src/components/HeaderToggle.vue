@@ -11,7 +11,7 @@
         </button>
     </div>
 
-    <a href="https://github.com/IngoGutwin/todo_app" class="text-black"
+    <a href="https://github.com/IngoGutwin/todo_app" class="text-white"
         >Link to reporitory</a
     >
 </template>
